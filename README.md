@@ -1,2 +1,69 @@
 # hyperstim_dataprocessing
 Package for processing recorded two-photon calcium imaging data with suite2p
+
+
+
+# README
+
+### Location of the Scripts:
+```bash
+git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
+```
+
+---
+
+### Basic Description of Our Process:
+1. **MESc File Extraction**: 
+   - The MESc file from the two-photon recording sessions is extracted into TIFF files. These TIFF files are used exclusively for the rest of the process. Each file represents the recording of an experiment with a specific parameter change to observe its effect.
+
+2. **TIFF File Concatenation**: 
+   - TIFF files from one recording session are concatenated based on parameter types.
+   - For example, if `tiff_1`, `tiff_2`, and `tiff_3` are recordings of experiments performed with different current amplitudes, they will be concatenated.
+
+3. **Input to Suite2p**:
+   - The merged TIFF files serve as the input to Suite2p, which runs with adjusted parameter values optimized for GCaMP6f and GCaMP6s indicators.
+
+---
+
+### Folder Structure Created by the Pipeline:
+- **Root Directory**: Contains the TIFF files of the experiment.
+  - **`merged_tiffs` Folder**: Contains subfolders of concatenated (merged) TIFF files necessary for running Suite2p.
+    - **Subfolders of Merged TIFF Files**:
+      - Each subfolder contains a single merged TIFF file.
+
+---
+
+### Contents:
+1. **`pipeline_script_rev.py`**:
+   - This script calls functions to process the data.
+   - The meanings of changeable values are explained within the script.
+   - **`Mesc_data.npy`**: A DataFrame of three datasets extracted from the MESc recordings, converted into a `.npy` file.
+     - **Datasets in the DataFrame**:
+       - **`FileID`**: Number of the TIFF file extracted from individual recordings.
+       - **`FrameNo`**: Frame number of the individual recordings.
+       - **`Trigger`**: Frame number corresponding to the time point at which the stimulation began.
+
+2. **`mesc_data_handling_rev.py`**:
+   - Contains the function `tiff_merge()`, which:
+     - Creates the `merged_tiffs` folder.
+     - Receives input from `pipeline_script_rev.py`.
+     - Merges the corresponding TIFF files into separate folders.
+   - **Nomenclature**:
+     - **Folder Name**: `merged_experimentname_MUnit_number1_number2`
+     - **TIFF File Name**: `merged_experimentname_MUnit_number1_number2.tif`
+
+3. **`suite2p_script_rev.py`**:
+   - Based on Suite2p notebooks available on [GitHub](https://github.com/MouseLand/suite2p.git).
+   - Defines parameters for GCaMP6f and GCaMP6s indicators.
+
+---
+
+### Additional Explanations:
+Descriptions of parameter lists for functions are provided at the beginning of each script.
+
+---
+
+### Help to Avoid Errors:
+1. Suite2p only works with **Python version 3.9**.
+2. Code runs best with the **Suite2p interpreter**.
+3. Ensure the `.suite2p` folder is present to access the default ops dictionary.
