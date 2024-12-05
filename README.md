@@ -64,5 +64,5 @@ Descriptions of parameter lists for functions are provided at the beginning of e
 
 ### Help to Avoid Errors:
 1. Suite2p only works with **Python version 3.9**.
-2. Code runs best with the **Suite2p interpreter**.
-3. Ensure the `.suite2p` folder is present to access the default ops dictionary.
+2. Activate the **Suite2p** environment before running the code.
+3. Ensure the `suite2p` folder is present to access the default ops dictionary (ops.npy) and the classifier parameters (classifier_user.npy). You can find these files uploaded to the package.
