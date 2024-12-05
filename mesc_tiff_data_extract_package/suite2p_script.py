@@ -6,7 +6,7 @@ def run_suite2p(merged_folders, data_path, gcamp):
 
       Input parameters
       ----------
-      merged_folders:
+      merged_folders: The output of 'tiff_file_merger.py', contains the merged tiff file folder names in a nested list 
       data_path: outer folder containing 'merged' folders,  usually same as 'tiff_directory' (explained in pipeline_script)
       gcamp: f or s depending on the indicator in the experiments
       'run_s2p()' returns one ops dictionary for each plane processed, here the default parameters are used for the ops dictionary.
