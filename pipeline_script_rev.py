@@ -1,5 +1,5 @@
 from pathlib import Path
-from mesc_tiff_data_extract_package import mesc_data_handling_rev
+from mesc_tiff_data_extract_package import tiff_file_merger
 from mesc_tiff_data_extract_package import suite2p_script_rev
 
 import os
@@ -30,7 +30,7 @@ gcamp = 's' #for GCaMP6s: 's' , for GCaMP6f: 'f'
 
 #------VALUES TO CHANGE END------
 
-output_subfolders = mesc_data_handling_rev.tiff_merge(exp_file_name, list_of_file_nums, root_directory)
+output_subfolders = tiff_file_merger.tiff_merge(exp_file_name, list_of_file_nums, root_directory)
 suite2p_script_rev.run_suite2p(output_subfolders, tiff_directory, gcamp)
 
 #--------------Suite2p manual sorting------------------
