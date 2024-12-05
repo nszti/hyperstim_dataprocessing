@@ -6,9 +6,9 @@ import tifftools
 
 def tiff_merge(exp_file_name, list_of_file_nums, output_root_directory):
     '''
-    Parameters
+    Input parameters
     ----------
-    'exp_file_name': name of the experiment file (from MESc)
+    'exp_file_name': name of the experiment file
     'list_of_file_nums': the numbers of the TIFF files which are to be concatenated in the process
     'output_root_directory': base directory, contains the TIFF files
     -------
