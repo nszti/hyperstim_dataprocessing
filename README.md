@@ -13,11 +13,11 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 ---
 
 ### Basic Description of Our Process:
-1. **MESc File Extraction**: 
-   - The MESc file from the two-photon recording sessions is extracted into TIFF files. These TIFF files are used exclusively for the rest of the process. Each file represents the recording of an experiment with a specific parameter change to observe its effect.
+1. **TIFF File Extraction**: 
+   - TIFF files from the two-photon recording sessions are extracted from the MESc file. These TIFF files are used exclusively for the rest of the process. Each file represents the recording of an experiment with a specific parameter change to observe its effect.
 
 2. **TIFF File Concatenation**: 
-   - TIFF files from one recording session are concatenated based on parameter types.
+   - TIFF files from one recording session are concatenated based on the changed parameter type.
    - For example, if `tiff_1`, `tiff_2`, and `tiff_3` are recordings of experiments performed with different current amplitudes, they will be concatenated.
 
 3. **Input to Suite2p**:
@@ -28,8 +28,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 ### Folder Structure Created by the Pipeline:
 - **Root Directory**: Contains the TIFF files of the experiment.
   - **`merged_tiffs` Folder**: Contains subfolders of concatenated (merged) TIFF files necessary for running Suite2p.
-    - **Subfolders of Merged TIFF Files**:
-      - Each subfolder contains a single merged TIFF file.
+    - **concatenated TIFF Files**: Each subfolder contains a single merged TIFF file.
 
 ---
 
