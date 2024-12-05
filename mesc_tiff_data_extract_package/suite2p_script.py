@@ -3,17 +3,18 @@ import suite2p
 from suite2p.run_s2p import run_s2p
 import tifftools
 import subprocess
-from mesc_tiff_data_extract_package import mesc_data_handling_rev
+from mesc_tiff_data_extract_package import tiff_file_merger
 
 def run_suite2p(merged_folders, data_path, gcamp):
       '''
 
-      Parameters
+      Input parameters
       ----------
+      merged_folders:
       data_path: outer folder containing 'merged' folders,  usually same as 'tiff_directory' (explained in pipeline_script)
       gcamp: f or s depending on the indicator in the experiments
       'run_s2p()' returns one ops dictionary for each plane processed, here the default parameters are used for the ops dictionary.
-      The specific parameters for GCaMP6f & s are given in db lists, because parameters provided in db will overwrite parameters specified in ops
+      The specific parameters for GCaMP6f and GCaMP6s are given in db lists, because parameters provided in db will overwrite parameters specified in ops
       The base code used for this part can be accessed in the github site of Suite2p. Additional useful scripts: https://github.com/MouseLand/suite2p/blob/main/jupyter/run_suite2p_colab_2023.ipynb
       Returns
       -------
