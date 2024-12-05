@@ -54,7 +54,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 3. **`suite2p_script.py`**:
    - Based on Suite2p notebooks available on [GitHub](https://github.com/MouseLand/suite2p.git).
    - Defines parameters for GCaMP6f and GCaMP6s indicators.
-   - It runs the whole Suite2p algorithm for all merged TIFF files created.
+   - It runs all individual modules(Registration, ROI detection, Signal Extraction, Classification of ROIs, Spike Deconvolution) in the Suite2p algorithm for all merged TIFF files created.
 
 ---
 
