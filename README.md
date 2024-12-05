@@ -42,7 +42,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
        - **`FrameNo`**: Number of frames in an individual recording.https://github.com/nszti/hyperstim_dataprocessing/tree/main
        - **`Trigger`**: The frame number corresponding to the time point at which the electrical stimulation started.
 
-2. **`mesc_data_handling_rev.py`**:
+2. **`tiff_file_merger.py`**:
    - Contains the function `tiff_merge()`, which:
      - Creates the `merged_tiffs` folder.
      - Receives input from `pipeline_script_rev.py`.
