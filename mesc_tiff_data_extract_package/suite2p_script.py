@@ -1,8 +1,6 @@
 import os
 import suite2p
 from suite2p.run_s2p import run_s2p
-import tifftools
-import subprocess
 from mesc_tiff_data_extract_package import tiff_file_merger
 
 def run_suite2p(merged_folders, data_path, gcamp):
