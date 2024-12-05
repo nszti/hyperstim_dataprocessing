@@ -14,14 +14,14 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 
 ### Basic Description of Our Process:
 1. **TIFF File Extraction**: 
-   - TIFF files from the two-photon recording sessions are extracted from the MESc file. These TIFF files are used exclusively for the rest of the process. Each file represents the recording of an experiment with a specific parameter change to observe its effect.
+   - TIFF files from the two-photon recording sessions are extracted from the MESc file. These TIFF files are used exclusively for the rest of the process. Each file represents a single recording of an experiment with a specific stimulus parameter set to observe its effect.
 
 2. **TIFF File Concatenation**: 
    - TIFF files from one recording session are concatenated based on the changed parameter type.
-   - For example, if `tiff_1`, `tiff_2`, and `tiff_3` are recordings of experiments performed with different current amplitudes, they will be concatenated.
+   - For example, if `tiff_1`, `tiff_2`, and `tiff_3` are recordings of experiments performed with different current amplitudes (e.g., -10, -20 and -30 uA), they will be concatenated.
 
 3. **Input to Suite2p**:
-   - The merged TIFF files serve as the input to Suite2p, which runs with adjusted parameter values optimized for GCaMP6f and GCaMP6s indicators.
+   - The merged (or individual) TIFF files serve as the input to Suite2p, which runs with adjusted parameter values optimized for GCaMP6f and GCaMP6s indicators.
 
 ---
 
@@ -35,12 +35,12 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 ### Contents:
 1. **`pipeline_script_rev.py`**:
    - This script calls functions to process the data.
-   - The meanings of changeable values are explained within the script.
-   - **`Mesc_data.npy`**: A DataFrame of three datasets extracted from the MESc recordings, converted into a `.npy` file.
+   - The meanings of input parameters (root_directory, tiff_directory, exp_file_name, mesc_DATA_file, list_of_file_nums) are explained within the script.
+   - **`Mesc_data.npy`**: The input for parameter "mesc_DATA_file". This file is a Pandas DataFrame containing three datasets extracted from the MESc recordings, converted into a `.npy` file.
      - **Datasets in the DataFrame**:
-       - **`FileID`**: Number of the TIFF file extracted from individual recordings.
-       - **`FrameNo`**: Frame number of the individual recordings.
-       - **`Trigger`**: Frame number corresponding to the time point at which the stimulation began.
+       - **`FileID`**: ID of the TIFF file extracted from individual recordings.
+       - **`FrameNo`**: Number of frames in an individual recording.https://github.com/nszti/hyperstim_dataprocessing/tree/main
+       - **`Trigger`**: The frame number corresponding to the time point at which the electrical stimulation started.
 
 2. **`mesc_data_handling_rev.py`**:
    - Contains the function `tiff_merge()`, which:
