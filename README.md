@@ -33,7 +33,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 ---
 
 ### Contents:
-1. **`pipeline_script_rev.py`**:
+1. **`pipeline_script.py`**:
    - This script calls functions to process the data.
    - The meanings of input parameters (root_directory, tiff_directory, exp_file_name, mesc_DATA_file, list_of_file_nums) are explained within the script.
    - **`Mesc_data.npy`**: The input for parameter "mesc_DATA_file". This file is a Pandas DataFrame containing three datasets extracted from the MESc recordings, converted into a `.npy` file.
@@ -51,7 +51,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
      - **Folder Name**: `merged_experimentname_MUnit_number1_number2`
      - **TIFF File Name**: `merged_experimentname_MUnit_number1_number2.tif`
 
-3. **`suite2p_script_rev.py`**:
+3. **`suite2p_script.py`**:
    - Based on Suite2p notebooks available on [GitHub](https://github.com/MouseLand/suite2p.git).
    - Defines parameters for GCaMP6f and GCaMP6s indicators.
 
