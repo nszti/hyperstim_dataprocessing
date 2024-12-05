@@ -16,8 +16,8 @@ def tiff_merge(exp_file_name, list_of_file_nums, output_root_directory):
     makes 'merged_tiffs' directory, saves merged (concatenated) files to separate folders
     the function gets the list of numbers and matches them to the tiff file names, then concatenates the files and saves them into the 'merged_tiffs' directory
     each concatenated file gets the prefix of 'merged', then the original tiff file name, and the numbers of the merged files separated by '_'.  this structure is for easier file management later.
-    e.g. for merged tiff file's folder name: 'merged_2024_09_GCaMP6s_in_vivo_MUnit_1_2_3'
-    e.g. for merged tiff file name: 'merged_2024_09_GCaMP6s_in_vivo_MUnit_1_2_3.tif' 
+    e.g., for merged TIFF file's folder name: 'merged_2024_09_GCaMP6s_in_vivo_MUnit_1_2_3'
+    e.g., for merged TIFF file name: 'merged_2024_09_GCaMP6s_in_vivo_MUnit_1_2_3.tif' 
     '''
 
     suffix = '_MUnit_'
