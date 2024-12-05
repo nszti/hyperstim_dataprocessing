@@ -31,7 +31,7 @@ gcamp = 's' #for GCaMP6s: 's' , for GCaMP6f: 'f'
 #------VALUES TO CHANGE END------
 
 output_subfolders = tiff_file_merger.tiff_merge(exp_file_name, list_of_file_nums, root_directory)
-suite2p_script_rev.run_suite2p(output_subfolders, tiff_directory, gcamp)
+suite2p_script.run_suite2p(output_subfolders, tiff_directory, gcamp)
 
 #--------------Suite2p manual sorting------------------
 
