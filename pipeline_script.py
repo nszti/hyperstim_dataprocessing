@@ -1,6 +1,6 @@
 from pathlib import Path
 from mesc_tiff_data_extract_package import tiff_file_merger
-from mesc_tiff_data_extract_package import suite2p_script_rev
+from mesc_tiff_data_extract_package import suite2p_script
 
 import os
 '''
