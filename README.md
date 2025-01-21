@@ -35,7 +35,7 @@ git clone -v git@github.com:nszti/hyperstim_dataprocessing.git
 ### Contents:
 1. **`pipeline_script.py`**:
    - This script calls functions to process the data.
-   - The meanings of input parameters (root_directory, tiff_directory, exp_file_name, mesc_DATA_file, list_of_file_nums) are explained within the script.
+   - The meaning of input parameters (root_directory, tiff_directory, exp_file_name, mesc_DATA_file, list_of_file_nums) are explained within the script.
    - **`Mesc_data.npy`**: The input for parameter "mesc_DATA_file". This file is a Pandas DataFrame containing three datasets extracted from the MESc recordings, converted into a `.npy` file.
      - **Datasets in the DataFrame**:
        - **`FileID`**: ID of the TIFF file extracted from individual recordings.
